@@ -1,0 +1,56 @@
+{
+  "name": "storybook-boilerplate-by-kaustubh-saxena",
+  "version": "0.1.0",
+  "dependencies": {
+    "dog-names": "^1.0.2",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "react-scripts": "2.0.5"
+  },
+  "scripts": {
+    "start": "start-storybook -p 9001 -c .storybook",
+    "build": "build-storybook -c .storybook -o .out",
+    "lint": "eslint .",
+    "jest": "jest --env=jsdom",
+    "test": "run-s lint jest",
+    "posttest": "npm run format",
+    "eject": "react-scripts eject",
+    "precommit": "lint-staged",
+    "format": "prettier --write '**/*.{js,css,md}'"
+  },
+  "devDependencies": {
+    "@storybook/react": "^3.4.11",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^1.0.0",
+    "enzyme": "^3.7.0",
+    "eslint": "^5.7.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-react": "^7.11.1",
+    "husky": "^1.1.2",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^23.6.0",
+    "lint-staged": "^7.3.0",
+    "npm-run-all": "^4.1.1",
+    "prettier": "^1.14.3",
+    "react-test-renderer": "^16.0.0",
+    "style-loader": "^0.23.1"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less|sass|scss|postcss)$": "identity-obj-proxy"
+    },
+    "collectCoverage": true
+  }
+}
